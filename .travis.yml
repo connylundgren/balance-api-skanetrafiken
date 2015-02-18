@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+- '0.10'
+before_install:
+- openssl aes-256-cbc -K $encrypted_a58c3b88dda5_key -iv $encrypted_a58c3b88dda5_iv
+  -in test/credentials.json.enc -out test/credentials.json -d
+- npm install -g phantomjs@^1.9.8

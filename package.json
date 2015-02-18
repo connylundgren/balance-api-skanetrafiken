@@ -1,0 +1,28 @@
+{
+  "name": "balance-api-skanetrafiken",
+  "version": "0.1.0",
+  "description": "balance.io api for Skånetrafiken's Jojo Reskassa",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha && mochify --reporter spec --timeout 10000 --web-security false",
+    "encrypt-credentials": "travis encrypt-file test/credentials.json test/credentials.json.enc --add"
+  },
+  "author": "Jacob Waller <jacob@krawaller.se>",
+  "license": "MIT",
+  "dependencies": {
+    "accounting": "^0.4.1",
+    "browser-request": "^0.3.3",
+    "cheerio": "^0.18.0",
+    "iconv-lite": "^0.4.7",
+    "request": "^2.53.0"
+  },
+  "devDependencies": {
+    "chai": "^2.0.0",
+    "mocha": "^2.1.0",
+    "mochify": "^2.4.0"
+  },
+  "browser": {
+    "iconv-lite": false,
+    "request": "browser-request"
+  }
+}

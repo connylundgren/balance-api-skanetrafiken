@@ -51,7 +51,11 @@ module.exports = function Skanetrafiken(options, callback) {
 
       if (name) {
         var rawAmount = $(this).find('.right').text().replace(/\s+/g, ' ').trim()
-        var amount = accounting.parse(rawAmount)
+        if (name.startsWith('Periodkort')) {
+          var amount = rawAmount
+        } else {
+          var amount = accounting.parse(rawAmount)
+        }
         accounts.push({
           name: name,
           amount: amount
